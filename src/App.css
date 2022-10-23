@@ -44,6 +44,7 @@
   height: 45px;
   border: 0;
   width: auto;
+  margin-top: 10px;
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 10px;
@@ -112,7 +113,7 @@
   object-fit: cover;
 }
 
-.connected-container input[type='text'] {
+.connected-container input[type="text"] {
   display: inline-block;
   color: white;
   padding: 10px;
