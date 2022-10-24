@@ -130,3 +130,36 @@
 .connected-container button {
   height: 50px;
 }
+
+.alert-box {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.error {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
