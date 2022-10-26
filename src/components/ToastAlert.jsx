@@ -1,23 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function ToastAlert({ type, message, showAleart }) {
-  let display;
-  if (showAleart !== true) {
-    console.log(showAleart);
-    display = "none";
-  }
-  const closeButtonHandler = (e) => {
-    e.target.parentElement.parentElement.style.display = "none";
+export default function ToastAlert({ message, type, showAleart }) {
+  const [showAlert, setShowAlert] = useState(showAleart);
+
+  const closeButtonHandler = () => {
+    console.log("clicked");
+    setShowAlert((prev) => !prev);
   };
+  useEffect(() => {
+    setShowAlert(showAleart);
+  }, [showAleart, message, type]);
 
-  return (
-    <div className={`alert-box ${type}`} style={{ display: `${display}` }}>
-      <span>
-        <button className="closebtn" onClick={closeButtonHandler}>
-          X
-        </button>
-      </span>
-      <p>{message}</p>
-    </div>
-  );
+  if (showAlert) {
+    return (
+      <div className={`alert-box ${type}`}>
+        <span>
+          <button className="closebtn" onClick={closeButtonHandler}>
+            X
+          </button>
+        </span>
+        <p>{message}</p>
+      </div>
+    );
+  } else return null;
 }
